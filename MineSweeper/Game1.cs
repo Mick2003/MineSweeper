@@ -41,7 +41,6 @@ namespace MineSweeper
 
             IsMouseVisible = true;
 
-            plantBombs();
             InitializeBoard();
             PlantBombs();
             CountNeighbors();
@@ -52,16 +51,37 @@ namespace MineSweeper
 
         void CountNeighbors()
         {
-
+            for(int r=1; r < BOARD_ZISE-1; r++)
+                for(int c=1; c < BOARD_ZISE-1; c++)
+                {
+                    int count = 0;
+                    if (cell[r - 1, c - 1].hasBomb)
+                        count++;
+                    if (cell[r - 1, c].hasBomb)
+                        count++;
+                    if (cell[r - 1, c + 1].hasBomb)
+                        count++;
+                    if (cell[r, c - 1].hasBomb)
+                        count++;
+                    if (cell[r, c + 1].hasBomb)
+                        count++;
+                    if (cell[r + 1, c - 1].hasBomb)
+                        count++;
+                    if (cell[r + 1, c].hasBomb)
+                        count++;
+                    if (cell[r + 1, c + 1].hasBomb)
+                        count++;
+                    cell[r, c].neighboringBombs = count;
+                }
         }
 
-        void plantBombs()
+        void PlantBombs()
         {
             Random rand = new Random();
 
             bool[] n = new bool[100];
 
-            for (int i = 0; i < 90;  i++)
+            for (int i = 0; i < 90; i++)
                 n[i] = false;
 
             for (int i = 90; i < 100; i++)
@@ -75,6 +95,14 @@ namespace MineSweeper
                 n[pos] = save;
             }
 
+            for(int i=0; i<100; i++)
+            {
+                int c = i % 10;
+                int r = i / c;
+                cell[c, r].hasBomb = n[i];
+            }
+
+            /*
             for (int i = 0; i < 100; i++)
             {
                 if (n[i])
@@ -85,16 +113,24 @@ namespace MineSweeper
                     Console.WriteLine();
 
             }
-            Console.ReadLine();
-        }
-
-        void PlantBombs()
-        {
-
+            Console.ReadLine(); */
         }
 
         void InitializeBoard()
         {
+            for(int r=0; r <BOARD_ZISE;)
+                for(int c=0; c< BOARD_ZISE;)
+                {
+                    cell[r, c].hasBomb = false;
+                    cell[r, c].hasFlag = false;
+                    cell[r, c].isUncoverd = false;
+                    cell[r, c].position.Width = CELL_WIDTH;
+                    cell[r, c].position.Width = CELL_WIDTH;
+                    //480x480
+                    cell[r, c].position.X = c * CELL_WIDTH;
+                    cell[r, c].position.Y = r * CELL_WIDTH;
+                    cell[r, c].neighboringBombs = 0;
+                }
 
         }
 
@@ -148,6 +184,16 @@ namespace MineSweeper
             // TODO: Add your drawing code here
 
             _spriteBatch.Begin();
+            for (int r = 0; r < BOARD_ZISE; r++)
+                for (int c = 0; c < BOARD_ZISE; c++)
+                    if (cell[r, c].hasBomb)
+                    {
+                        _spriteBatch.Draw(bombTexture, cell[r, c].position, Color.White);
+                    }
+                    else
+                    {
+                        _spriteBatch.Draw(blankTexture, cell[r, c].position, Color.White);
+                    }
 
             _spriteBatch.End();
 
