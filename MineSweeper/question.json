@@ -1,36 +1,74 @@
 {
-    "Questions": {
-        "h1": {
-            "q1": "",
-            "q2": "",
-            "q3": ""
-        },
-        "h2": {
-            "q1": "",
-            "q2": "",
-            "q3": ""
-        },
-        "h3": {
-            "q1": "",
-            "q2": "",
-            "q3": ""
-        }
+  "Questions": {
+    "boek4": {
+      "h1": {
+        "q1": " wat  is fenotype ",
+        "q2": " wat is genotype",
+        "q3": " heeft een prokaryoot een celkern ?"
+      },
+      "h2": {
+        "q1": " wat is een biopsie ",
+        "q2": " wat is secretie ",
+        "q3": " wat is osmotische waarde "
+      },
+      "h3": {
+        "q1": " wat zijn mutaties ",
+        "q2": " wat is een diploïde cel ",
+        "q3": " hoe heet een ongeboren baby in de eerste weken"
+      }             
     },
-    "Awnsers": {
-        "h1": {
-            "a1": "",
-            "a2": "",
-            "a3": ""
-        },
-        "h2": {
-            "a1": "",
-            "a2": "",
-            "a3": ""
-        },
-        "h3": {
-            "a1": "",
-            "a2": "",
-            "a3": ""
+    "boek5": {
+      "h1": {
+        "q1": " wat is assimilatie ",
+        "q2": " wat is dissimilatie",
+        "q3": " waar gebruikt het lichaam ATP voor "
+      },
+      "h3": {
+        "q1": " hoe heten alle dode resten en andere afvalproducten van organismen ? ",
+        "q2": " wat zijn broeikasgassen ",
+        "q3": " wat is een zelfreinigend vermogen "
+      },
+        "h4": {
+            "q1": "hoe heten de aminozuren die we niet zelf kunnen maken en dat van buitenaf moet komen",
+            "q2": " wat maak een emulgator mogelijk ",
+            "q3": " wat doet gal "
         }
     }
+  },
+  "Awnsers": {
+    "boek4": {
+      "h1": {
+        "a1": " een waarneembare eigenschap ",
+        "a2": " de verzameling genen in een cel ",
+        "a3": " nee "
+      },
+      "h2": {
+        "a1": " het verzamelen van weefsel ",
+        "a2": " het afgeven van stoffen door cellen",
+        "a3": " het aantal deeltjes die in een oplossing zit "
+      },
+      "h3": {
+        "a1": " veranderingen in het DNA ",
+        "a2": " cellen met een dubbele set chromosomen ",
+        "a3": " embryo "
+      }
+    },
+    "boek5": {
+      "h1": {
+        "a1": " de opbouw van organische moleculen uit kleinere moleculen",
+        "a2": " de omzet van grote organische moleculen uit kleinere moleculen",
+        "a3": " energie "
+      },
+      "h3": {
+        "a1": " detritus ",
+        "a2": " de gassen die het broeikaseffect veroorzaakt ",
+        "a3": " het omzetten van organische afvalstoffen in anorganische stoffen"
+      },
+      "h4": {
+        "a1": " essentiële aminozuren ",
+        "a2": " het mengen van water en vet  ",
+        "a3": " het emulgeert grote vetdruppels tot kleine vetdruppels "
+      }
+    }
+  }
 }
